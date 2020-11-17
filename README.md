@@ -1,3 +1,6 @@
+# Jan I
+Please don't copy
+
 # Merge Conflicts
 
 When merging two branches there are sometimes changes that Git cannot automatically resolve. Git prefers then to flag the conflict as something it cannot resolve instead of intervening and potentially causing even larger errors. Errors that require human intervention usually result from changes to the same file, for example two people modify the same line of a file. Git would then require the person merging the files to decide which one it should keep.
@@ -29,11 +32,7 @@ This has caused a merge conflict as the commit which they both share now has two
 Looking into the file `src/main.c`, as shown by `git status`, we would see the following around the line of interest.
 
 ``` C
-<<<<<<< HEAD
         printf("Result: %s", tmp);
-=======
-        printf("Output: %s", tmp);
->>>>>>> bar
 ```
 
 This tells use that on our current branch (our current HEAD) the line containing "Result", where as on the branch we wish to merge into our current branch (bar) the line contains "Output". Git does not know which one we wish to use and as such we must decide. Let's say that we wish the have the line contain output and not result, then we must manually delete the markers from Git as well as the line. Using our new patch knowledge we can see the what needs to be done below.
